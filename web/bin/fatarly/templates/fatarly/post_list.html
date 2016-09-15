@@ -1,0 +1,14 @@
+<html>
+	<head>
+		<title>Ez a főoldal</title>
+	</head>
+	<body style="background-color:#080808">
+	{% for post in posts %}
+	<div style="margin: auto">
+		<h2><a style="color: #DC143C; text-align: center" href="">{{ post.title }}</a></h2>
+		<h4 style="color: #DC143C">Published: {{ post.published_date }}</h4>
+		<h4 style="color: #DC143C">{{ post.text|linebreaksbr }} </h4>
+	</div>
+	{% endfor %}
+	</body>
+</html>
