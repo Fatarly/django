@@ -1,13 +1,21 @@
+{% load staticfiles %}
+
 <html>
 	<head>
 		<title>Ez a főoldal</title>
 	</head>
-	<body style="background-color:#080808">
+	<body>
+	<link rel="stylesheet" href="{% static 'css/bootstrap.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/bootstrap-theme.min.css' %}">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	<div class="header">
+		<h1>This is #Fatarly's website</h1>
+	</div>
 	{% for post in posts %}
-	<div style="margin: auto">
-		<h2><a style="color: #DC143C; text-align: center" href="">{{ post.title }}</a></h2>
-		<h4 style="color: #DC143C">Published: {{ post.published_date }}</h4>
-		<h4 style="color: #DC143C">{{ post.text|linebreaksbr }} </h4>
+	<div class="post_box">
+		<h2><a href="">{{ post.title }}</a></h2>
+		<h4>Published: {{ post.published_date }}</h4>
+		<h4>{{ post.text|linebreaksbr }} </h4>
 	</div>
 	{% endfor %}
 	</body>
